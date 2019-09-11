@@ -1,0 +1,24 @@
+{
+  "name": "ContactList2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bibang007/ContactList2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bibang007/ContactList2/issues"
+  },
+  "homepage": "https://github.com/bibang007/ContactList2#readme",
+  "dependencies": {
+    "pg": "^7.12.1",
+    "sequelize": "^5.18.4"
+  }
+}
