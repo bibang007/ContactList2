@@ -10,20 +10,25 @@ const main = async () => {
 
 
 const felicity = await Contact.create({
+    id: 1,
     first_name: 'Xiaofang',
     last_name: 'Zhang',
     phone: 123456,
     email: 'xiao@nyu.edu',
-    image: 'https://www.barraques.cat/pngfile/big/43-430987_cute-profile-images-pic-for-whatsapp-for-boys.jpg'
+    image: 'https://i.imgur.com/D5wcicT.jpg?1'
   });
 
   const alane = await Contact.create({
+      id:2,
     first_name: 'Alane',
     last_name: 'Bibang',
     phone: 123456,
     email: 'alane@ga.com',
-    image: 'https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
+    image: 'https://i.imgur.com/DARzyGL.jpg'
   });
+
+  await felicity.setContact(felicity);
+  await alane.setContact(alane);
 
   process.exit()
 }

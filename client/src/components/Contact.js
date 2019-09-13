@@ -4,7 +4,7 @@ export default class Contact extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            Contact: ''
+            contact: ''
         }
         this.getContact = this.getContact.bind(this)
     }
@@ -16,7 +16,7 @@ export default class Contact extends Component {
         })
         .then(data => {
             console.log(data.contact)
-            this.setState({ Contact: data.contact })
+            this.setState({ contact: data.contact })
         })
     }
 

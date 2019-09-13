@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contacts = props => {
     return (
-        props.vontacts.map(contact => (
+        props.contacts.map(contact => (
             <div className="contact" key={contact.id}>
                 <div className="image-wrapper">
                     <img src={contact.image} alt='pic'/>
