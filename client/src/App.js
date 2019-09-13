@@ -21,7 +21,7 @@ class App extends Component {
     fetch (url)  
     .then(response => response.json())
     .then(data => {
-      this.setState({ Contacts: data.Contacts })
+      this.setState({ contacts: data.contacts })
     })
   }
 
@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path='/Contacts' render={() => <Contacts Contacts = {this.state.Contacts}/>} />
+          <Route exact path='/Contacts' render={() => <Contacts contacts = {this.state.Contacts}/>} />
           <Route path='/Contacts/:id' render={(props) => <Contact {...props} />} />
           <Route path='/create-Contact' render={() => <CreateContact />} />
         </Switch>
