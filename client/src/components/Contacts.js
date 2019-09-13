@@ -13,7 +13,7 @@ const Contacts = props => {
             <p>phone: {this.state.contact.phone}</p>
             <p>e-mail :{this.state.contact.email}</p>
             </div>
-            
+            <button className="button" id={contact.id} onClick={props.handleDelete}>Delete</button>   
             </div>
         )))
 }
