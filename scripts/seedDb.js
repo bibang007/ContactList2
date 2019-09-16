@@ -27,8 +27,6 @@ const felicity = await Contact.create({
     image: 'https://i.imgur.com/DARzyGL.jpg'
   });
 
-  await felicity.setContact(felicity);
-  await alane.setContact(alane);
 
   process.exit()
 }

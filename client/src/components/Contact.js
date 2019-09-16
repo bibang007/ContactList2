@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import UpdateContact from './UpdateContact'
-import { withRouter } from 'react-router'
+// import { withRouter } from 'react-router'
 
 export default class Contact extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ export default class Contact extends Component {
     }
 
     getContact() {
-        fetch(`http://localhost:4567/Contacts/${this.props.match.params.id}`)
+        fetch(`http://localhost:4567/contacts/${this.props.match.params.id}`)
         .then(response => {
             return response.json()
         })
@@ -30,7 +30,7 @@ export default class Contact extends Component {
         return (
             <div className="contact">
                 <div className="image-wrapper">
-                    <img src={this.state.contact.image} alt='pic'/>
+                    <img src={this.state.contact.image}/>
                 </div>
 
                 <div className="contact-details">
