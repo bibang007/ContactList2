@@ -3,9 +3,11 @@ import React from 'react'
 const Contacts = props => {
 
     return (
+        
         props.contacts.map(contact => (
+           
             <div className="contact" key={contact.id}>
-                <div className="image-wrapper">
+                <div className="wrapper">
                     <img src={contact.image} alt='pic'/>
                 </div>
                 <div className="contact-details">

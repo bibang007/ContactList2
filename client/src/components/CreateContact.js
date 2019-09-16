@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { withRouter } from 'react-router-dom'
 
 
 class CreateContact extends Component {
@@ -14,15 +14,15 @@ class CreateContact extends Component {
         }
     }
 
-    onFormChange = event => {
-        const { name, value } = event.target;
+    onFormChange = e => {
+        const { name, value } = e.target;
         this.setState({
             [name]: value
         })
     }
 
-    onFormSubmit = event => {
-        event.preventDefault();
+    onFormSubmit = e => {
+        e.preventDefault();
         let data = {
             first_name: this.state.first_name,
             last_name: this.state.last_name,
@@ -47,7 +47,8 @@ class CreateContact extends Component {
             phone: "",
             image: ""
         })
-        
+        window.location.reload()
+        this.props.history.push('/contacts')
     }
 
     render() {
@@ -126,7 +127,8 @@ class CreateContact extends Component {
                 </div>
                 </div>
                 <div className="control">
-                    <button type="submit" className="button">Add Contact</button>
+                    <button type="submit" className="button" 
+                    >Add Contact</button>
                 </div>
             </form>
             </div>
@@ -134,4 +136,4 @@ class CreateContact extends Component {
     }
 }
 
-export default CreateContact;
+export default withRouter(CreateContact)

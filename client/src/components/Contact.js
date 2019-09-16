@@ -28,8 +28,9 @@ export default class Contact extends Component {
 
     render() {
         return (
+
             <div className="contact">
-                <div className="image-wrapper">
+                <div className="wrapper">
                     <img src={this.state.contact.image}/>
                 </div>
 
@@ -49,7 +50,9 @@ export default class Contact extends Component {
                         >
                     Delete
                 </button>
+
                 <UpdateContact id={this.props.match.params.id} contact={this.state.contact} getContact={this.getContact} />
+                > Update
             </div>
         )}
 }

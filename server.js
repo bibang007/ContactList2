@@ -81,8 +81,8 @@ app.delete('/contacts/:id', async (req, res) => {
     const id = req.params.id;
     console.log(id);
 
-    const Contact = await Contact.destroy({ where: {id: id} });
-    res.json(Contact);
+    const contact = await Contact.destroy({ where: {id: id} });
+    res.json(contact);
   } catch (e) {
     console.error(e);
     res.status(500).json({ message: e.message});

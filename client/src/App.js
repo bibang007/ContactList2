@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   async handleDelete(e) {
-    e.preDefault();
+    e.preventDefault();
     console.log(e.target.id)
     await fetch(`http://localhost:4567/contacts/${e.target.id}`, {
     method: 'DELETE',
@@ -45,6 +45,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+         <div>
+                <p className='title'>My Contacts</p>
+            </div>
         <Switch>
           <Route exact path='/Contacts' render={() => <Contacts contacts = {this.state.contacts}  handleDelete={this.handleDelete}/>} />
           <Route path='/Contacts/:id' render={(props) => <Contact {...props} handleDelete={this.handleDelete}/>} />
