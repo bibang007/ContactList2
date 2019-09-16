@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import UpdateContact from './UpdateContact'
+import { withRouter } from 'react-router'
 
 export default class Contact extends Component {
     constructor(props) {
@@ -47,6 +49,7 @@ export default class Contact extends Component {
                         >
                     Delete
                 </button>
+                <UpdateContact id={this.props.match.params.id} contact={this.state.contact} getContact={this.getContact} />
             </div>
         )}
 }
