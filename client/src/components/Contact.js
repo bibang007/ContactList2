@@ -37,7 +37,16 @@ export default class Contact extends Component {
             <p>phone: {this.state.contact.phone}</p>
             <p>e-mail :{this.state.contact.email}</p>
             </div>
-            
+            <button 
+                    className="button" 
+                    id={this.state.contact.id} 
+                    onClick={
+                        (e) => { this.props.handleDelete(e) 
+                        this.props.history.push('/contacts')}
+                    }
+                        >
+                    Delete
+                </button>
             </div>
         )}
 }

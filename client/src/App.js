@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 import Contacts from './components/Contacts'
 import Contact from './components/Contact'
 import CreateContact from './components/CreateContact'
-//import UpdateContact from './components/UpdateContact'
+
 
 const url = 'http://localhost:4567/contacts'
 
@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props) 
     this.state = {
-      Contacts: []
+      contacts: []
     }
     this.getContacts = this.getContacts.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
@@ -30,10 +30,10 @@ class App extends Component {
     this.getContacts()
   }
 
-  async handleDelete(event) {
-    event.preventDefault();
-    console.log(event.target.id)
-    await fetch(`http://localhost:4567/contacts/${event.target.id}`, {
+  async handleDelete(e) {
+    e.preDefault();
+    console.log(e.target.id)
+    await fetch(`http://localhost:4567/contacts/${e.target.id}`, {
     method: 'DELETE',
     }).then(response => {
       return response.json();
@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path='/Contacts' render={() => <Contacts contacts = {this.state.Contacts}  handleDelete={this.handleDelete}/>} />
+          <Route exact path='/Contacts' render={() => <Contacts contacts = {this.state.contacts}  handleDelete={this.handleDelete}/>} />
           <Route path='/Contacts/:id' render={(props) => <Contact {...props} handleDelete={this.handleDelete}/>} />
           <Route path='/create-Contact' render={() => <CreateContact />} />
         </Switch>

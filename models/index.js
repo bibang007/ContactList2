@@ -1,8 +1,12 @@
 const Sequelize = require('sequelize');
 
 
-const db = new Sequelize({
-  database: 'mycontacts_db',
+// const db = new Sequelize({
+//   database: 'mycontacts_db',
+//   dialect: 'postgres'
+// });
+
+const db = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost:4567/buildings_db', {
   dialect: 'postgres'
 });
 
